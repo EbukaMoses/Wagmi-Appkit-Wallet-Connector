@@ -48,15 +48,17 @@ const WalletConnect = () => {
             {!selectedConnector ? (
                 <div>
                     {!connectClick ? (
-                        <button onClick={handleConnectWallet}>Connect Wallet</button>
+                        <button onClick={handleConnectWallet} className='px-4 py-2 bg-[#516EF1] rounded-3xl  shadow-2xl  text-white font-bold'>Connect Wallet</button>
                     ) : (
-                        <div>
-                            {connectors.map((connector) => (
-                                <button key={connector.id} onClick={() => handleConnector(connector)}>
-                                    {connector.name}
-                                </button>
-                            ))}
-                            <button onClick={() => setConnectClick(false)}>Cancel Connect</button>
+                        <div className='flex flex-col gap-6'>
+                            <div className="flex gap-4">
+                                {connectors.map((connector) => (
+                                    <button key={connector.id} onClick={() => handleConnector(connector)} className='px-4 py-2 bg-gradient-to-r from-[#033AC6] via-[#1d4a71] to-[#011B68] border-[0.5px] shadow-2xl border-white rounded-lg  text-white font-bold'>
+                                        {connector.name}
+                                    </button>
+                                ))}
+                            </div>
+                            <button onClick={() => setConnectClick(false)} className='px-4 py-2 bg-[#781515] rounded-lg  shadow-2xl  text-white font-bold'>Cancel Connect</button>
                         </div>
                     )}
                 </div>
