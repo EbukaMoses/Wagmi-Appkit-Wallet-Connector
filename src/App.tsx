@@ -6,6 +6,7 @@ import { createAppKit } from '@reown/appkit/react'
 import { EthersAdapter } from '@reown/appkit-adapter-ethers'
 import { arbitrum, mainnet } from '@reown/appkit/networks'
 import Wagmi from './pages/Wagmi'
+import Footer from './ui/Footer'
 
 // 1. Get projectId
 const projectId = '3641eb845066fc8188c4f639191a0f12'
@@ -36,19 +37,19 @@ function App() {
   const [side, setSide] = useState('Wagmi')
 
   return (
-    // <div className='bg-gradient-to-r from-[#9B0C00] via-[#170200] to-[#710800] w-full h-screen'>
-    <div className='bg-gradient-to-r from-[#033AC6] via-[#1d4a71] to-[#011B68] w-full h-screen'>
+    <div className='relative bg-gradient-to-r from-[#033AC6] via-[#1d4a71] to-[#011B68] w-full h-auto'>
       <br />
       <Header />
-      <div className="flex flex-col items-center justify-center mt-24 ">
+      <div className="flex flex-col items-center justify-center mt-24 pb-20 ">
         <div className="flex items-center justify-between  gap-2 rounded-lg border-[1.5px] border-white p-2">
           <span className={`transition-normal text-white font-semibold text-lg px-8 py-2 rounded-lg cursor-pointer ${side === 'Wagmi' ? 'bg-gradient-to-r from-[#2703c6] via-[#1d4a71] to-[#031857] border-[0.5px] shadow-2xl border-white' : ''}`} onClick={() => setSide('Wagmi')}>Wagmi</span>
           <span className={`transition-normal text-white font-semibold text-lg px-8 py-2 rounded-lg cursor-pointer ${side === 'Appkit' ? 'bg-gradient-to-r from-[#2703c6] via-[#1d4a71] to-[#031857] border-[0.5px] shadow-2xl border-white' : ''}`} onClick={() => setSide('Appkit')}>Appkit</span>
         </div>
         <div className="flex items-center justify-center mt-10">
-          {side === 'Appkit' ? <appkit-button /> : <Wagmi />}
+          {side === 'Appkit' ? <appkit-button className='mb-40' /> : <Wagmi />}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
