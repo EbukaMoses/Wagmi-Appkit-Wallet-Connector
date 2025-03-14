@@ -8,10 +8,10 @@ import { arbitrum, mainnet } from '@reown/appkit/networks'
 import Wagmi from './pages/Wagmi'
 
 // 1. Get projectId
-const projectId = 'YOUR_PROJECT_ID'
+const projectId = '3641eb845066fc8188c4f639191a0f12'
 
 // 2. Set the networks
-const networks = [arbitrum, mainnet]
+const networks: any = [arbitrum, mainnet]
 
 // 3. Create a metadata object - optional
 const metadata = {
