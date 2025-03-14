@@ -13,7 +13,7 @@ export const config = createConfig({
     ],
     multiInjectedProviderDiscovery: true,
     transports: {
-        [mainnet.id]: http(),
-        [sepolia.id]: http(),
-    },
+        [mainnet.id]: http(), // Transport for mainnet
+        [sepolia.id]: http(), // Transport for sepolia
+    } as Record<number, ReturnType<typeof http>>,
 })
