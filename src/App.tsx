@@ -48,7 +48,7 @@ function App() {
           <span className={`transition-normal text-white font-semibold text-lg px-8 py-2 rounded-lg cursor-pointer ${side === 'Appkit' ? 'bg-gradient-to-r from-[#2703c6] via-[#1d4a71] to-[#031857] border-[0.5px] shadow-2xl border-white' : ''}`} onClick={() => setSide('Appkit')}>Appkit</span>
         </div>
         <div className="flex items-center justify-center mt-10">
-          {side === 'Appkit' ? <appkit-button /> : <Wagmi />}
+          {side === 'Appkit' ? <div className='mb-40'><appkit-button /></div> : <Wagmi />}
         </div>
       </div>
       <Footer />
